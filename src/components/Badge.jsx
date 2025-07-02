@@ -1,7 +1,7 @@
-export default function Badge(props) {
+export default function Badge({state, children}) {
     // classe par défaut, ajoute un texte blanc et un fond si cliqué
     let x = 'rounded px-2 py-1';
-    if (props.toggle) {
+    if (state) {
         x = "bg-gray-800 text-white rounded px-2 py-1";
     }
 
@@ -9,7 +9,7 @@ export default function Badge(props) {
     return (
         <>
             <li className={x}>
-                <span className="font-semibold">Techno:</span> {props.tech}
+                <span className="font-semibold">Techno:</span> {children}
             </li>
         </>
     );

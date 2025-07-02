@@ -22,7 +22,7 @@ export default function MemberCard({member}) {
                 <li className="rounded px-2 py-1">
                     <span className="font-semibold">Prénom:</span> {member.lastName}
                 </li>
-                <Badge tech={member.tech} toggle={toggleBadge} />
+                <Badge state={toggleBadge}>{member.tech}</Badge>
                 <li className="rounded px-2 py-1">
                     <span className="font-semibold">Message:</span> {member.message}
                 </li>
