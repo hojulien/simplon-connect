@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function MemberForm({memberList, setMemberList}) {
+export default function MemberForm({setMemberList}) {
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -18,7 +18,7 @@ export default function MemberForm({memberList, setMemberList}) {
             imageUrl: imageUrl.trim() || "https://s3.eu-central-1.amazonaws.com/uploads.mangoweb.org/shared-prod/visegradfund.org/uploads/2021/08/placeholder-male.jpg"
         };
 
-        setMemberList([...memberList, newMember]);
+        setMemberList([...JSON.parse(localStorage.getItem("memberList")), newMember]);
         setFirstName('');
         setLastName('');
         setTech('');
