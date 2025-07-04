@@ -18,7 +18,9 @@ export default function MemberForm({setMemberList}) {
             imageUrl: imageUrl.trim() || "https://s3.eu-central-1.amazonaws.com/uploads.mangoweb.org/shared-prod/visegradfund.org/uploads/2021/08/placeholder-male.jpg"
         };
 
-        setMemberList([...JSON.parse(localStorage.getItem("memberList")), newMember]);
+        let newList = [...JSON.parse(localStorage.getItem("memberList")), newMember];
+        setMemberList(newList);
+        localStorage.setItem("memberList", JSON.stringify(newList));
         setFirstName('');
         setLastName('');
         setTech('');
